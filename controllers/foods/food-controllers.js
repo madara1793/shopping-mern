@@ -22,6 +22,7 @@ export const POST_CREATE_A_FOOD = async (req, res, next) => {
 export const GET_FETCH_A_SPECIFIC_CATEGORY_FOOD = async (req, res, next) => {
   const category = req.params.categoryName;
   const foods = await foodModel.find({ category });
+  
   res.status(200).json({
     message: "success",
     foods,
